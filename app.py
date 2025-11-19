@@ -1,8 +1,10 @@
 #import namespace necesarias para este proyecto
+from flask import Flask, render_template
+import requests
 
 app = Flask(__name__)
 #agrega los servidores disponibles
-MIRRORS = []
+MIRRORS = ["de1", "nl1", "us1", "gb1", "at1"]
 def rb_get(path, params=None):
     """Obtiene datos desde un mirror válido de RadioBrowser"""
     for mirror in MIRRORS:
